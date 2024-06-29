@@ -5,7 +5,7 @@ import axiosApi from "../../axiosApi";
 
 const initialState: QuoteMutation = {
     author: "",
-    category: "",
+    category: "star-wars",
     text: "",
 };
 
@@ -59,7 +59,6 @@ const MutateQuotes = () => {
         try {
             const postData = {
                 ...quoteMutation,
-                datetime: new Date().toISOString(),
             };
 
             if (id) {
@@ -79,7 +78,9 @@ const MutateQuotes = () => {
     return (
         <>
             <h1>{id ? 'Edit Quote' : 'Add New Quote'}</h1>
-            <form className="AddQuotesForm d-flex flex-column align-items-center justify-content-center" onSubmit={onFormSubmit}>
+            <form className="AddQuotesForm d-flex flex-column align-items-center justify-content-center"
+                  onSubmit={onFormSubmit}>
+                <label>Category</label>
                 <select
                     name="category"
                     required
@@ -88,11 +89,12 @@ const MutateQuotes = () => {
                     value={quoteMutation.category}
                 >
                     {QuoteCategories.map(category => (
-                        <option key={category.id} value={category.title}>
+                        <option key={category.id} value={category.id}>
                             {category.title}
                         </option>
                     ))}
                 </select>
+                <label>Author</label>
                 <input
                     className="AddAuthorForm-input col-10 mb-3"
                     required
@@ -102,6 +104,7 @@ const MutateQuotes = () => {
                     onChange={onFieldChange}
                     placeholder="Author"
                 />
+                <label>Quote text</label>
                 <textarea
                     className="AddTextForm-input col-10 mb-3"
                     required
