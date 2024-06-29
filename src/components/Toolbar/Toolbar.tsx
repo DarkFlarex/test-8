@@ -8,7 +8,7 @@ const Toolbar = () => {
                     Quotes Central
                 </NavLink>
                 <ul className="navbar-nav d-flex flex-row gap-3 flex-nowrap">
-                    <li className="nav-item">
+                    <li className="nav-item me-2">
                         <NavLink
                             to="/"
                             className="nav-link"

@@ -12,6 +12,9 @@ const initialState: QuoteMutation = {
 const QuoteCategories = [
     {title: 'Star Wars', id: 'star-wars'},
     {title: 'Motivational', id: 'motivational'},
+    {title: 'Famous people', id: 'famous_people'},
+    {title: 'Saying', id: 'saying'},
+    {title: 'Humour', id: 'humour'},
 ];
 
 const MutateQuotes = () => {
@@ -84,7 +87,7 @@ const MutateQuotes = () => {
                 <select
                     name="category"
                     required
-                    className="form-control col-10 mb-3"
+                    className="AddSelectForm-input col-5 mb-3"
                     onChange={onFieldChange}
                     value={quoteMutation.category}
                 >
@@ -96,7 +99,7 @@ const MutateQuotes = () => {
                 </select>
                 <label>Author</label>
                 <input
-                    className="AddAuthorForm-input col-10 mb-3"
+                    className="AddAuthorForm-input col-5 mb-3"
                     required
                     type="text"
                     name="author"
@@ -106,7 +109,7 @@ const MutateQuotes = () => {
                 />
                 <label>Quote text</label>
                 <textarea
-                    className="AddTextForm-input col-10 mb-3"
+                    className="AddTextForm-input col-5 mb-3"
                     required
                     name="text"
                     value={quoteMutation.text}

@@ -5,8 +5,6 @@ import {Route, Routes} from "react-router-dom";
 import GetQuotes from "./components/GetQuotes/GetQuotes";
 
 const  App=()=> {
-
-
   return (
     <>
         <header>
@@ -16,6 +14,7 @@ const  App=()=> {
             <Route path="/" element={<GetQuotes/>} />
             <Route path="/add-quote" element={<MutateQuotes/>} />
             <Route path="/quotes/:id/edit" element={<MutateQuotes />} />
+            <Route path="/quotes/:category" element={<GetQuotes/>} />
             <Route path="*" element={<h1>Not found!</h1>} />
         </Routes>
     </>
